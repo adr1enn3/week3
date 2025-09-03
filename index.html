@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {
+        --ink: #3520d4;
+        --paper: #3f1919;
+        --line: #03ffaf;
+        --bg: #066711;
+        --skin: #5d4403;
+        --lip: #000000;
+        --iris: rgb(0, 25, 9);
+    }
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #001aaa9d;
+    font-family: system-ui, Arial, sans-serif;
+  }
+  .stage {
+        min-height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .head-row {
+        display: flex; /* puts children in a row */
+        align-items: center; /* vertical centering */
+        gap: 16px; /* space between ear/head/ear */
+      }
+      .head {
+        width: 500px;
+        height:400px;
+        background: var(--skin);
+        border: 1px solid var(--line);
+        border-radius: 90%; /* rectangle → oval */
+        display: flex;
+        flex-direction: column; /* stack features vertically */
+        align-items: center;
+        gap: 12px;
+        padding-top: 110px; /* make room for hair band (since it will be absolute) */
+        position: relative; /* positioning reference for absolute children */
+        box-shadow: 0 2px 0 rgba(192, 2, 2, 0.06) inset;
+      }
+      .ear {
+        width: 12px;
+        height: 80px;
+        background: var(--skin);
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        position: relative; /* so z-index works */
+        z-index: 3; /* draw ears above hair */
+      }
+      .hair {
+        /* size + flex grid for curls */
+        width: %;
+        height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 6px;
+        padding-top: px;
+        position: absolute; /* taken out of flow, pinned to .head */
+        top: px;
+        left: 6%;
+        right: 6%;
+        z-index: 2; /* hair sits above head fill, below ears */
+      }
+      .curl {
+        width: 200px;
+        height: 4px;
+        background: var(--ink);
+        border: px dotted var(--line);
+        border-radius: 5%; /* circle */
+      }
+      .eyes {
+        width:12%;
+        height: 120px;
+        display: flex;
+        justify-content: space-evenly; /* spread the two eyes */
+        align-items: center;
+      }
+      .eye {
+        width: 80px;
+        height: 46px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 999px; /* large radius → pill/oval */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .iris {
+        width: 18px;
+        height: 18px;
+        background: var(--iris);
+        border: 25px solid var(--line);
+        border-radius: 50%; /* circle */
+      }
+
+      /* ===== nose (only a bottom border in a rounded box) ===== */
+      .nose {
+        width: 60px;
+        height: 40px;
+        border-bottom: 2px solid var(--line);
+        border-radius: 50%;
+      }
+
+      /* ===== mouth (half-circle) ===== */
+      .mouth {
+        width: 140px;
+        height: 70px;
+        border: 70px double var(--lip);
+        border-top: none; /* hide the top edge */
+        border-bottom-left-radius: 999px;
+        border-bottom-right-radius: 999px;
+        background: transparent;
+      }
+
+      /* ===== absolute detail inside the head ===== */
+      .mole {
+        position: absolute; /* positioned inside .head box */
+        width: 8px;
+        height: 8px;
+        background: var(--ink);
+        border-radius: 50%;
+        right: 90px; /* distance from head’s right edge */
+        bottom: 90px; /* distance from head’s bottom edge */
+        z-index: 4; /* above everything in the head */
+      }
+
+      /* ===== a fixed badge stuck to the viewport ===== */
+      .badge {
+        position: fixed; /* sticks to the window when scrolling */
+        top: 12px;
+        left: 12px;
+        background: var(--ink);
+        color: #fff;
+        padding: 6px 8px;
+        font-size: 12px;
+        border-radius: 4px;
+        z-index: 999; /* above the artwork */
+        letter-spacing: 0.03em;
+      }
+</style>
+<body>
+    <main class="stage"></main>
+    <div class="head-row">
+        <div class="ear"></div>
+            <div class="head">
+                 <div class="hair">
+                    <div class="curl"></div>
+                    <div class="curl"></div>
+                    <div class="curl"></div>
+                    <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+                 <div class="curl"></div>
+            </div>
+            <div class="eyes">
+                <div class="eye"><div class="iris"></div></div>
+                <div class="eye"><div class="iris"></div></div>
+              </div>
+              <div class="nose"></div>
+              <div class="mouth"></div>
+              <div class="mole"></div>
+              </div>
+         <div class="ear"></div>
+
+</body>
+</html>
